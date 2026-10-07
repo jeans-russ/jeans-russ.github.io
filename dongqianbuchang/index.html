@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="动迁补偿标准查询与解读平台。提供最新房屋征收补偿条例、安置费计算公式、宅基地补偿明细及特殊困难群体帮扶政策。助您清晰了解动迁补偿标准，维护合法权益。">
+    <meta name="keywords" content="动迁补偿标准, 房屋征收补偿, 拆迁安置费, 征地补偿, 宅基地补偿">
+    <title>动迁补偿标准-房屋征收补偿政策与计算指南</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --highlight-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-main: #333;
+            --text-light: #666;
+            --border-color: #e1e4e8;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background-color: var(--highlight-color);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: #d35400;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        /* Policy Grid */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .policy-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .policy-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .policy-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .link-arrow {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .link-arrow::after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.2s;
+        }
+
+        .policy-card:hover .link-arrow::after {
+            transform: translateX(5px);
+        }
+
+        /* Calculation Guide */
+        .guide-section {
+            background-color: var(--bg-light);
+            padding: 60px 0;
+        }
+
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .guide-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .step-list {
+            margin-top: 30px;
+        }
+
+        .step-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .step-text p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .calculator-box {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .calc-result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #eaf2f8;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .calc-result.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .calc-total {
+            border-top: 1px solid #bdc3c7;
+            padding-top: 15px;
+            margin-top: 15px;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--accent-color);
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">
+            <span>⚖️</span> 补偿通
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">政策解读</a></li>
+                <li><a href="#">计算器</a></li>
+                <li><a href="#">案例分析</a></li>
+                <li><a href="#">法律援助</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta-btn">咨询专家</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>动迁补偿标准详解</h1>
+            <p>全面解读最新房屋征收与补偿条例，为您提供宅基地、房屋、附属物及停产停业损失的详细计算依据与维权指南。</p>
+            <div class="search-box">
+                <input type="text" placeholder="输入您的城市或区域，查询当地标准...">
+                <button type="button">查询标准</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Cards -->
+    <section class="container">
+        <div class="section-title">
+            <h2>核心补偿项目</h2>
+            <p>了解动迁补偿通常包含哪些部分，确保您的权益不被遗漏</p>
+        </div>
+        <div class="policy-grid">
+            <article class="policy-card">
+                <span class="card-icon">🏠</span>
+                <h3>房屋价值补偿</h3>
+                <p>包括被征收房屋及其占用范围内的土地使用权的市场评估价格。这是补偿的核心部分，通常采用货币补偿或产权调换两种方式。</p>
+                <a href="#" class="link-arrow">查看评估细则</a>
+            </article>
+            <article class="policy-card">
+                <span class="card-icon">💰</span>
+                <h3>搬迁与临时安置费</h3>
+                <p>因征收房屋造成的搬迁补偿，以及被征收人自行安排住处的临时安置补助费和周转房费用。</p>
+                <a href="#" class="link-arrow">了解计算公式</a>
+            </article>
+            <article class="policy-card">
+                <span class="card-icon">🏭</span>
+                <h3>停产停业损失补偿</h3>
+                <p>针对非住宅房屋（如商铺、厂房），因征收造成的实际停产停业损失，包括预期利益损失和遣散费等。</p>
+                <a href="#" class="link-arrow">认定标准与依据</a>
+            </article>
+            <article class="policy-card">
+                <span class="card-icon">🌳</span>
+                <h3>附属物及青苗补偿</h3>
+                <p>针对房屋周边的树木、果树、围墙、水井、厕所等附属设施的补偿标准，各地差异较大，需参照当地具体规定。</p>
+                <a href="#" class="link-arrow">各地标准汇总</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Calculation Guide -->
+    <section class="guide-section">
+        <div class="container">
+            <div class="guide-layout">
+                <div class="guide-content">
+                    <h2>如何计算您的补偿金额？</h2>
+                    <p>动迁补偿并非单一公式，而是由多个部分组成的综合计算体系。了解这些组成部分，能帮助您在谈判中更有底气。</p>
+                    
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-text">
+                                <h4>确认房屋性质与面积</h4>
+                                <p>核实房屋是否为合法建筑，面积是否经过实测登记。违章建筑通常只能获得附属物补偿，无法获得房屋价值补偿。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-text">
+                                <h4>确认评估机构与结果</h4>
+                                <p>补偿金额由具有相应资质的房地产价格评估机构按照房屋征收评估办法评估确定。您有权对评估结果申请复核鉴定。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-text">
+                                <h4>核算补助与奖励</h4>
+                                <p>除了基础补偿，各地通常还有搬迁奖励、速签奖励等。务必确认奖励条件，以免错过。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-box">
+                    <h3 style="margin-bottom: 20px; font-size: 20px;">简易估算工具</h3>
+                    <form id="calcForm" onsubmit="calculateCompensation(event)">
+                        <div class="form-group">
+                            <label>房屋类型</label>
+                            <select id="houseType">
+                                <option value="1">住宅</option>
+                                <option value="1.2">商铺/商业</option>
+                                <option value="1.1">厂房</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>房屋面积 (平方米)</label>
+                            <input type="number" id="houseArea" placeholder="例如：100" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label>当地基准单价 (元/m²)</label>
+                            <input type="number" id="basePrice" placeholder="例如：8000">
+                        </div>
+                        <button type="submit" class="cta-btn" style="width: 100%; border-radius: 8px;">开始估算</button>
+                    </form>
+
+                    <div id="resultBox" class="calc-result">
+                        <div class="calc-row">
+                            <span>房屋价值补偿:</span>
+                            <span id="resValue">0 元</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>搬迁补助:</span>
+                            <span id="resMove">0 元</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>临时安置费 (6个月):</span>
+                            <span id="resTemp">0 元</span>
+                        </div>
+                        <div class="calc-total">
+                            预计总补偿: <span id="resTotal">0 元</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container">
+        <div class="section-title">
+            <h2>常见问题解答</h2>
+            <p>关于动迁补偿标准的疑问与解答</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item active">
+                <div class="faq-question">动迁补偿标准是由谁制定的？</div>
+                <div class="faq-answer">
+                    <p>动迁补偿标准主要依据《国有土地上房屋征收与补偿条例》及各省市制定的具体实施办法。其中，房屋价值补偿由具有资质的评估机构根据市场价评估确定，补助和奖励标准则由地方政府根据财政状况制定。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">评估价太低怎么办？</div>
+                <div class="faq-answer">
+                    <p>如果您对评估结果有异议，可以在收到评估报告之日起10日内向房地产价格评估机构申请复核评估。对复核结果仍有异议的，可以向房地产价格评估专家委员会申请鉴定。鉴定结果通常作为最终依据。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">农村宅基地动迁怎么补偿？</div>
+                <div class="faq-answer">
+                    <p>农村宅基地动迁补偿通常包括房屋补偿费、宅基地使用权补偿费以及附着物补偿。部分地区实行“拆一还一”，部分地区则根据当地经济发展水平给予货币补偿。具体需参考当地的《土地管理法》实施办法。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">选择产权调换有什么注意事项？</div>
+                <div class="faq-answer">
+                    <p>产权调换通常要求“等价交换”。注意查看安置房的地理位置、楼层、朝向、面积以及交房时间。如果安置房面积小于原房屋面积，通常需要补差价；如果大于，则可能需要支付差价或选择其他补偿方式。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>补偿通</h3>
+                <p>专注于为被征收人提供最权威的动迁补偿政策解读与维权工具。我们致力于帮助每一位公民清晰了解自身权益，通过合法途径获得应得的补偿。</p>
+            </div>
+            <div class="footer-col">
+                <h4>政策指南</h4>
+                <ul>
+                    <li><a href="#">国有土地征收</a></li>
+                    <li><a href="#">集体土地征收</a></li>
+                    <li><a href="#">房屋评估标准</a></li>
+                    <li><a href="#">安置房政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>实用工具</h4>
+                <ul>
+                    <li><a href="#">补偿计算器</a></li>
+                    <li><a href="#">各地政策库</a></li>
+                    <li><a href="#">评估流程图</a></li>
+                    <li><a href="#">维权流程</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>电话：400-123-4567</li>
+                    <li>邮箱：support@bupeartong.com</li>
+                    <li>地址：北京市朝阳区法律服务园区A座</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 补偿通 版权所有 | 本站内容仅供参考，不构成法律意见</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+<script>
+    // FAQ Toggle Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+            // Close others
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) otherItem.classList.remove('active');
+            });
+            // Toggle current
+            item.classList.toggle('active');
+        });
+    });
+
+    // Simple Calculator Logic
+    function calculateCompensation(e) {
+        e.preventDefault();
+        
+        const type = parseFloat(document.getElementById('houseType').value);
+        const area = parseFloat(document.getElementById('houseArea').value);
+        const basePrice = parseFloat(document.getElementById('basePrice').value);
+
+        if (!area || !basePrice) {
+            alert('请输入有效的房屋面积和基准单价');
+            return;
+        }
+
+        // Calculation Logic (Simplified for demonstration)
+        const value = area * basePrice * type;
+        const move = area * basePrice * 0.05; // 5% of value
+        const temp = area * basePrice * 0.2; // 20% of value for 6 months (approx)
+
+        document.getElementById('resValue').textContent = Math.round(value).toLocaleString() + ' 元';
+        document.getElementById('resMove').textContent = Math.round(move).toLocaleString() + ' 元';
+        document.getElementById('resTemp').textContent = Math.round(temp).toLocaleString() + ' 元';
+        
+        const total = value + move + temp;
+        document.getElementById('resTotal').textContent = Math.round(total).toLocaleString() + ' 元';
+
+        document.getElementById('resultBox').classList.add('show');
+    }
+</script>
+
+</body>
+  </html>
