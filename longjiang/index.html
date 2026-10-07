@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="龙江网提供龙江地区最新资讯、旅游攻略、文化展示及生活服务信息，致力于打造龙江人自己的综合信息门户。">
+    <meta name="keywords" content="龙江,龙江资讯,龙江旅游,龙江生活,龙江网">
+    <title>龙江-龙江综合信息门户与生活服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #e0e0e0;
+            --accent-color: #e63946;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-left: 12px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .top-bar {
+            background-color: #f1f3f5;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-header {
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .search-bar {
+            display: flex;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 40px;
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 0 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #004494;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .nav-menu a.active, .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/liangjiang_hero/1600/900') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .news-list-item {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+
+        .news-list-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .news-date {
+            width: 80px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .news-date .day {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
+
+        .news-content {
+            flex: 1;
+        }
+
+        .news-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-content h3:hover {
+            color: var(--primary-color);
+        }
+
+        .news-meta {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: #fff;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .widget-header {
+            background-color: var(--secondary-color);
+            padding: 12px 20px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hot-list li {
+            padding: 12px 20px;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .hot-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hot-index {
+            width: 20px;
+            height: 20px;
+            background-color: #eee;
+            color: #666;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .hot-list li:nth-child(1) .hot-index { background: #ff4d4f; color: #fff; }
+        .hot-list li:nth-child(2) .hot-index { background: #ff7a45; color: #fff; }
+        .hot-list li:nth-child(3) .hot-index { background: #ffc53d; color: #fff; }
+
+        .hot-list li:hover .hot-index {
+            background-color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--border-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Culture & Tourism Section */
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 86, 179, 0.9);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .search-bar {
+                display: none; /* Simplify for mobile */
+            }
+            .nav-menu {
+                display: none; /* Hide menu on small mobile for simplicity */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .top-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>欢迎来到龙江综合信息门户，连接龙江生活每一天</span>
+            <div class="top-links">
+                <a href="#">设为首页</a> | <a href="#">收藏本站</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container main-header">
+            <div class="header-content">
+                <a href="#" class="logo">龙江<span>网</span></a>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="搜索龙江资讯、景点、美食...">
+                    <button type="button">搜索</button>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="#" class="active">首页</a>
+                    <a href="#">龙江新闻</a>
+                    <a href="#">文化旅游</a>
+                    <a href="#">便民服务</a>
+                    <a href="#">图库视界</a>
+                    <a href="#">关于龙江</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>探索龙江，发现不一样的精彩</h1>
+            <p>汇聚龙江地区最新政策解读、深度旅游攻略、地道美食推荐及民生服务信息，为您提供一站式本地化生活服务。</p>
+            <div class="hero-actions">
+                <a href="#" class="btn">浏览热点</a>
+                <a href="#" class="btn btn-outline">查看旅游</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- News Section -->
+        <section class="news-section">
+            <div class="section-title">
+                <h2>龙江要闻</h2>
+                <a href="#">查看更多 &gt;</a>
+            </div>
+            <div class="news-grid">
+                <!-- News List -->
+                <div class="news-list">
+                    <article class="news-list-item">
+                        <div class="news-date">
+                            <div class="day">12</div>
+                            <div class="month">10月</div>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">龙江市召开2023年度经济工作会议，明确高质量发展新目标</a></h3>
+                            <div class="news-meta">来源：龙江日报 | 浏览：2.3万</div>
+                        </div>
+                    </article>
+                    <article class="news-list-item">
+                        <div class="news-date">
+                            <div class="day">11</div>
+                            <div class="month">10月</div>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">文旅融合促振兴：龙江特色民俗文化节盛大开幕</a></h3>
+                            <div class="news-meta">来源：文旅局 | 浏览：1.8万</div>
+                        </div>
+                    </article>
+                    <article class="news-list-item">
+                        <div class="news-date">
+                            <div class="day">10</div>
+                            <div class="month">10月</div>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">城市更新行动启动，龙江多条主干道将迎来大改造</a></h3>
+                            <div class="news-meta">来源：市政管理处 | 浏览：3.1万</div>
+                        </div>
+                    </article>
+                    <article class="news-list-item">
+                        <div class="news-date">
+                            <div class="day">09</div>
+                            <div class="month">10月</div>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">民生工程落地：龙江市新增三所优质公办幼儿园</a></h3>
+                            <div class="news-meta">来源：教育局 | 浏览：1.5万</div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar -->
+                <aside>
+                    <div class="sidebar-widget">
+                        <div class="widget-header">
+                            <span>24小时热榜</span>
+                        </div>
+                        <ul class="hot-list">
+                            <li><a href="#"><span class="hot-index">1</span>龙江新区交通规划图公布</a></li>
+                            <li><a href="#"><span class="hot-index">2</span>深秋龙江最美的赏枫地点推荐</a></li>
+                            <li><a href="#"><span class="hot-index">3</span>龙江市最新人才引进政策解读</a></li>
+                            <li><a href="#"><span class="hot-index">4</span>本地美食：不可错过的龙江烤鱼</a></li>
+                            <li><a href="#"><span class="hot-index">5</span>秋季流感预防指南</a></li>
+                            <li><a href="#"><span class="hot-index">6</span>龙江市图书馆新馆开放时间调整</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <div class="widget-header">
+                            <span>便民服务</span>
+                        </div>
+                        <div style="padding: 20px; text-align: center;">
+                            <p style="margin-bottom: 15px; color: #666;">扫码关注官方公众号</p>
+                            <div style="width: 150px; height: 150px; background: #eee; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #999;">
+                                [公众号二维码]
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="section-title">
+                <h2>服务特色</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📰</div>
+                    <h3>权威资讯</h3>
+                    <p>汇聚本地新闻、政策解读，第一时间掌握龙江动态，信息真实可靠。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✈️</div>
+                    <h3>旅游指南</h3>
+                    <p>深度挖掘龙江自然风光与人文古迹，提供实用的旅游攻略与路线规划。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛒</div>
+                    <h3>便民服务</h3>
+                    <p>整合政务办理、生活缴费、交通出行等资源，让生活更便捷高效。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>互动社区</h3>
+                    <p>搭建龙江人自己的交流平台，分享生活点滴，结识邻里好友。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture & Tourism Section -->
+        <section class="culture-section">
+            <div class="section-title">
+                <h2>龙江视界</h2>
+                <a href="#">进入图库 &gt;</a>
+            </div>
+            <div class="culture-grid">
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">自然风光</span>
+                        <img src="https://picsum.photos/seed/liangjiang1/400/300" alt="龙江湖景">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><a href="#">龙江湖：秋日里的璀璨明珠</a></h3>
+                        <p class="card-excerpt">秋天的龙江湖褪去了夏日的燥热，层林尽染，倒映着蓝天白云，是摄影爱好者的天堂。</p>
+                        <div class="card-footer">
+                            <span>摄影：张三</span>
+                            <span>2023-10-12</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">历史文化</span>
+                        <img src="https://picsum.photos/seed/liangjiang2/400/300" alt="古建筑群">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><a href="#">探访百年古镇：龙江老街</a></h3>
+                        <p class="card-excerpt">漫步在龙江老街，仿佛穿越了时空。这里保存着完整的明清建筑风格，每一块青石板都诉说着历史的故事。</p>
+                        <div class="card-footer">
+                            <span>旅游：李四</span>
+                            <span>2023-10-10</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">城市风貌</span>
+                        <img src="https://picsum.photos/seed/liangjiang3/400/300" alt="现代城市">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><a href="#">现代化都市的脉搏</a></h3>
+                        <p class="card-excerpt">高楼林立，车水马龙。龙江新区的发展日新月异，展现出现代化大都市的蓬勃生机。</p>
+                        <div class="card-footer">
+                            <span>资讯：王五</span>
+                            <span>2023-10-08</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" style="margin-top: 60px; margin-bottom: 60px;">
+            <div class="section-title">
+                <h2>常见问题</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details style="margin-bottom: 15px; border: 1px solid #eee; border-radius: 4px; padding: 15px;">
+                    <summary style="font-weight: 600; cursor: pointer; outline: none;">龙江网的信息来源有哪些？</summary>
+                    <p style="margin-top: 10px; color: #666;">龙江网的信息主要来源于与本地政府部门、主流媒体及权威机构合作发布的资讯，确保内容的准确性和时效性。</p>
+                </details>
+                <details style="margin-bottom: 15px; border: 1px solid #eee; border-radius: 4px; padding: 15px;">
+                    <summary style="font-weight: 600; cursor: pointer; outline: none;">如何在龙江网上发布活动或信息？</summary>
+                    <p style="margin-top: 10px; color: #666;">个人或企业用户可联系我们的客服中心，通过后台投稿系统提交相关资料，审核通过后即可在相应栏目展示。</p>
+                </details>
+                <details style="margin-bottom: 15px; border: 1px solid #eee; border-radius: 4px; padding: 15px;">
+                    <summary style="font-weight: 600; cursor: pointer; outline: none;">网站支持移动端访问吗？</summary>
+                    <p style="margin-top: 10px; color: #666;">是的，龙江网完全支持移动端访问，拥有响应式设计，在手机、平板等设备上均可获得良好的浏览体验。</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>龙江网</h2>
+                    <p>龙江地区领先的综合信息服务平台，致力于为本地居民和外来游客提供最全面、最便捷的资讯服务。我们关注龙江发展，记录龙江变迁。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">新闻中心</a></li>
+                        <li><a href="#">文化旅游</a></li>
+                        <li><a href="#">便民服务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">广告服务</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：04xx-1234567</li>
+                        <li>邮箱：contact@liangjiang.com</li>
+                        <li>地址：龙江市XX区XX大道XX号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 龙江网 版权所有 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                              </html>
