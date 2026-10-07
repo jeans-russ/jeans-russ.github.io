@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="水性杨花下载 - 提供专业的水性杨花软件资源下载、版本更新、功能介绍及使用指南。包含安装教程、系统要求及常见问题解答，帮助用户安全获取并正确使用该软件。">
+    <meta name="keywords" content="水性杨花下载, 软件下载, 工具软件, 使用指南, 软件安装">
+    <title>水性杨花下载 - 专业软件资源与使用指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #007aff;
+            --primary-hover: #0056b3;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
+            --border-color: #e5e5e5;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-download-sm {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .btn-download-sm:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, var(--bg-color) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .download-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: #fafafa;
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            padding: 40px 0 80px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Features Section */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-left: 16px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #f0f7ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Version List */
+        .version-list {
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .version-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        .version-item:last-child {
+            border-bottom: none;
+        }
+
+        .version-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .version-info h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .version-info .version-tag {
+            font-size: 0.75rem;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #666;
+            margin-right: 8px;
+        }
+
+        .version-info .date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .version-info .size {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-right: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .install-steps {
+            counter-reset: step;
+        }
+
+        .install-step {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .install-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .install-step h5 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .install-step p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 16px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h5 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .version-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .version-item .download-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>💧</span> 水性杨花下载
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#features">功能介绍</a></li>
+                    <li><a href="#versions">版本下载</a></li>
+                    <li><a href="#guide">安装指南</a></li>
+                </ul>
+            </nav>
+            <a href="#versions" class="btn-download-sm">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <span class="badge">v2.4.0 稳定版已发布</span>
+                <h1>高效管理您的数字资产与创作流程</h1>
+                <p>提供安全、稳定、免费的下载服务。无论是个人使用还是团队协作，我们都能为您提供最优质的软件体验。</p>
+                <div class="download-actions">
+                    <a href="#versions" class="btn btn-primary">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-right:8px;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        下载最新版
+                    </a>
+                    <a href="#guide" class="btn btn-outline">
+                        查看使用教程
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container main-content">
+            <!-- Left Column -->
+            <div class="content-area">
+                <!-- Features -->
+                <section id="features">
+                    <h2 class="section-title">核心功能特点</h2>
+                    <div class="feature-grid">
+                        <article class="feature-card">
+                            <div class="feature-icon">🚀</div>
+                            <h3>极速传输</h3>
+                            <p>采用先进的传输协议，大幅提升文件上传与下载速度，支持断点续传，确保数据安全。</p>
+                        </article>
+                        <article class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3>安全加密</h3>
+                            <p>端到端加密技术，保护您的隐私数据不被泄露，符合国际安全标准。</p>
+                        </article>
+                        <article class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>数据可视化</h3>
+                            <p>直观的仪表盘展示，实时监控资源使用情况，让管理变得简单明了。</p>
+                        </article>
+                        <article class="feature-card">
+                            <div class="feature-icon">🛠️</div>
+                            <h3>多端同步</h3>
+                            <p>支持 Windows、Mac、iOS 及 Android 多平台无缝同步，随时随地处理工作。</p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Version List -->
+                <section id="versions">
+                    <h2 class="section-title">版本下载</h2>
+                    <div class="version-list">
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h4>水性杨花 下载 v2.4.0 <span class="version-tag">最新</span></h4>
+                                <span class="date">发布日期：2023-10-25</span>
+                            </div>
+                            <div class="version-info size">45.2 MB</div>
+                            <a href="#" class="btn-download-sm">下载</a>
+                        </div>
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h4>水性杨花 下载 v2.3.1 <span class="version-tag">稳定版</span></h4>
+                                <span class="date">发布日期：2023-09-10</span>
+                            </div>
+                            <div class="version-info size">44.8 MB</div>
+                            <a href="#" class="btn-download-sm">下载</a>
+                        </div>
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h4>水性杨花 下载 v2.2.0 <span class="version-tag">更新</span></h4>
+                                <span class="date">发布日期：2023-07-15</span>
+                            </div>
+                            <div class="version-info size">43.5 MB</div>
+                            <a href="#" class="btn-download-sm">下载</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <aside class="sidebar">
+                <!-- Guide -->
+                <div class="sidebar-card" id="guide">
+                    <h3>快速安装指南</h3>
+                    <div class="install-steps">
+                        <div class="install-step">
+                            <h5>1. 获取安装包</h5>
+                            <p>点击上方“下载”按钮，选择适合您系统的版本。</p>
+                        </div>
+                        <div class="install-step">
+                            <h5>2. 运行安装程序</h5>
+                            <p>双击下载的 .exe 或 .dmg 文件，启动安装向导。</p>
+                        </div>
+                        <div class="install-step">
+                            <h5>3. 完成配置</h5>
+                            <p>根据向导提示，勾选选项并点击“完成”即可启动。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="sidebar-card">
+                    <h3>常见问题 (FAQ)</h3>
+                    <div class="faq-item">
+                        <h5>软件需要联网吗？</h5>
+                        <p>部分功能需要联网验证，但基础下载功能支持离线模式。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5>支持哪些操作系统？</h5>
+                        <p>目前支持 Windows 10/11, macOS 12 及以上版本。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5>下载速度慢怎么办？</h5>
+                        <p>请检查网络连接，或尝试切换下载源节点。</p>
+                    </div>
+                </div>
+
+                <!-- System Requirements -->
+                <div class="sidebar-card">
+                    <h3>系统要求</h3>
+                    <ul style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 8px;">• CPU: 双核 2.0GHz 以上</li>
+                        <li style="margin-bottom: 8px;">• 内存: 4GB RAM</li>
+                        <li style="margin-bottom: 8px;">• 硬盘: 100MB 可用空间</li>
+                        <li>• 网络: 宽带连接</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="max-width: 300px;">
+                    <div class="logo" style="margin-bottom: 15px;">💧 水性杨花下载</div>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        致力于为用户提供最安全、高效的软件资源下载服务，让技术触手可及。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品</h4>
+                    <ul>
+                        <li><a href="#">功能特性</a></li>
+                        <li><a href="#">更新日志</a></li>
+                        <li><a href="#">价格方案</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">反馈建议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 水性杨花下载 版权所有. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+              </html>
