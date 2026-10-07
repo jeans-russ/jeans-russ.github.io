@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>素白白-极简护肤理念与纯净美妆产品指南</title>
+    <meta name="description" content="素白白官方网站，提供极简护肤理念解读、纯净美妆产品推荐及成分解析。专注于无添加、低敏、天然成分的护肤方案，帮助用户建立科学的清洁与保湿日常。">
+    <meta name="keywords" content="素白白, 极简护肤, 纯净美妆, 天然护肤, 低敏护肤, 成分解析">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6B8E23; /* OliveDrab - 自然、纯净 */
+            --secondary-color: #F5F5DC; /* Beige - 肤色、温和 */
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #FAFAFA;
+            --white: #FFFFFF;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 15px;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .header-cta {
+                display: block;
+            }
+            .header-cta .btn {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbf7 0%, #f0f4f0 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .tag {
+            background: rgba(107, 142, 35, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Philosophy Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .philosophy-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+        }
+
+        .philosophy-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .philosophy-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Routine Section */
+        .routine-section {
+            background-color: var(--white);
+        }
+
+        .routine-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: rgba(107, 142, 35, 0.15);
+            line-height: 1;
+            min-width: 60px;
+        }
+
+        .step-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--text-gray);
+        }
+
+        /* Product Showcase */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            height: 250px;
+            width: 100%;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .btn-sm {
+            padding: 6px 16px;
+            font-size: 12px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .btn-sm:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 12px;
+            color: var(--text-gray);
+            display: none;
+            padding-left: 10px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .header-inner {
+                padding: 0 16px;
+            }
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+            .step-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .step-number {
+                font-size: 36px;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.74 5.74c1.22 1.22 1.22 3.19 0 4.41l-5.74 5.74c-1.22 1.22-3.19 1.22-4.41 0L2.69 12.84c-1.22-1.22-1.22-3.19 0-4.41L7.43 2.69c1.22-1.22 3.19-1.22 4.41 0z"></path><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path></svg>
+                <span>素白白</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#philosophy">护肤理念</a></li>
+                    <li><a href="#routine">日常流程</a></li>
+                    <li><a href="#products">精选产品</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#products" class="btn btn-sm" style="background:var(--primary-color); color:white; border:none;">立即选购</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>回归肌肤本真，素白白</h1>
+                <p>拒绝繁杂添加，我们致力于提供最纯净、最温和的护肤方案。让肌肤在极简中呼吸，重拾健康光泽。</p>
+                <div class="hero-tags">
+                    <span class="tag">#无添加</span>
+                    <span class="tag">#低敏配方</span>
+                    <span class="tag">#纯净美妆</span>
+                    <span class="tag">#天然成分</span>
+                </div>
+                <div style="display:flex; justify-content:center; gap:16px;">
+                    <a href="#products" class="btn-sm" style="padding: 12px 32px; background: var(--primary-color); color: white;">探索产品</a>
+                    <a href="#philosophy" class="btn-sm" style="padding: 12px 32px; border: 1px solid #ccc;">了解理念</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>素白白的护肤哲学</h2>
+                    <p>基于皮肤生理学设计的极简主义护肤体系</p>
+                </div>
+                <div class="philosophy-grid">
+                    <article class="philosophy-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </div>
+                        <h3>极简配方</h3>
+                        <p>去除不必要的香精、色素和防腐剂。只保留对肌肤有益的核心活性成分，降低刺激风险。</p>
+                    </article>
+                    <article class="philosophy-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>安全优先</h3>
+                        <p>所有产品均通过皮肤刺激性测试与敏感肌适用性验证。为脆弱肌肤提供最基础的屏障保护。</p>
+                    </article>
+                    <article class="philosophy-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>温和修护</h3>
+                        <p>针对现代都市肌肤常见的干燥、泛红问题，提供温和的保湿与修护方案，不破坏皮脂膜。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Routine Section -->
+        <section id="routine" class="section routine-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>素白白·三步日常流程</h2>
+                    <p>适合所有肤质的基础护肤方案，简单有效</p>
+                </div>
+                <div class="routine-steps">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>温和洁面</h3>
+                            <p>使用氨基酸类洁面乳，在清洁污垢的同时保留肌肤必要的皮脂膜，避免过度清洁导致的紧绷感。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>保湿精华</h3>
+                            <p>采用透明质酸与神经酰胺复配配方，快速渗透角质层，深层补水并强化肌肤屏障功能。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>基础保湿</h3>
+                            <p>质地轻盈的乳液或面霜，锁住水分，为肌肤提供全天候的温和滋润，防止水分流失。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门纯净产品</h2>
+                    <p>精选核心单品，满足不同肌肤需求</p>
+                </div>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-img">
+                            <!-- Using picsum with specific seed for consistency -->
+                            <img src="https://picsum.photos/seed/soap/400/400" alt="纯净氨基酸洁面乳">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">清洁</span>
+                            <h3 class="product-title">素白白纯净洁面乳</h3>
+                            <p class="product-desc">PH值5.5弱酸性配方，温和洗净油脂，不紧绷。</p>
+                            <div class="product-footer">
+                                <span class="price">¥89</span>
+                                <a href="#" class="btn-sm">详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-img">
+                            <img src="https://picsum.photos/seed/serum/400/400" alt="舒缓保湿精华液">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">精华</span>
+                            <h3 class="product-title">舒缓修护精华液</h3>
+                            <p class="product-desc">添加马齿苋提取物，针对泛红敏感肌，快速镇静。</p>
+                            <div class="product-footer">
+                                <span class="price">¥158</span>
+                                <a href="#" class="btn-sm">详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-img">
+                            <img src="https://picsum.photos/seed/cream/400/400" alt="保湿乳液">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">乳霜</span>
+                            <h3 class="product-title">极简保湿乳液</h3>
+                            <p class="product-desc">无油配方，清爽不油腻，适合油性及混合肌。</p>
+                            <div class="product-footer">
+                                <span class="price">¥128</span>
+                                <a href="#" class="btn-sm">详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-img">
+                            <img src="https://picsum.photos/seed/oil/400/400" alt="神经酰胺面霜">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">面霜</span>
+                            <h3 class="product-title">神经酰胺屏障霜</h3>
+                            <p class="product-desc">高浓度神经酰胺，厚敷急救，修复受损角质层。</p>
+                            <div class="product-footer">
+                                <span class="price">¥198</span>
+                                <a href="#" class="btn-sm">详情</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于素白白产品与护肤的疑问</p>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">素白白的产品适合孕妇使用吗？</div>
+                        <div class="faq-answer">我们的产品配方不含视黄醇、水杨酸等孕妇慎用成分，主要成分为植物提取物和基础保湿剂，但在使用前建议咨询专业医生。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">敏感肌使用素白白会有刺激感吗？</div>
+                        <div class="faq-answer">素白白主打低敏配方，经过严格的刺激性测试。但每个人的肌肤耐受度不同，建议先在耳后做皮试，确认无不适后再正常使用。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">产品是纯天然有机的吗？</div>
+                        <div class="faq-answer">我们坚持使用高纯度的天然植物成分，但为了保证产品的卫生稳定性和活性成分的活性，会使用符合安全标准的防腐体系和乳化剂。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何判断自己的肤质？</div>
+                        <div class="faq-answer">您可以根据洗面奶使用后的紧绷感、T区出油情况以及是否有红肿痘痘来判断。素白白的产品线覆盖干性、中性和油性肌肤，可根据肤质选择对应质地。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 16px;">
+                        <span>素白白</span>
+                    </div>
+                    <p style="font-size: 14px; line-height: 1.6; color: #999;">
+                        致力于为现代都市人群提供安全、温和、有效的极简护肤解决方案。让护肤回归简单，让肌肤回归健康。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品系列</h4>
+                    <ul>
+                        <li><a href="#">洁面系列</a></li>
+                        <li><a href="#">精华系列</a></li>
+                        <li><a href="#">乳霜系列</a></li>
+                        <li><a href="#">防晒系列</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>护肤知识</h4>
+                    <ul>
+                        <li><a href="#">成分解析</a></li>
+                        <li><a href="#">肤质测试</a></li>
+                        <li><a href="#">使用教程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>客服热线：400-123-4567</li>
+                        <li>工作时间：9:00 - 18:00</li>
+                        <li>邮箱：support@susubai.com</li>
+                        <li>地址：上海市静安区护肤大道888号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 素白白护肤品牌. All Rights Reserved. 本页面为概念设计展示。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', function() {
+                    // 关闭其他打开的项（手风琴效果）
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
